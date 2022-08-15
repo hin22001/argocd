@@ -18,6 +18,7 @@ spec:
   source:
     repoURL: {{ $spec.source.repoURL }}
     targetRevision: {{ $app.helm.version }}
+    chart: {{ $name }}
     helm:
       values: |
 {{ toYaml $app.helm.values | indent 8 }}
