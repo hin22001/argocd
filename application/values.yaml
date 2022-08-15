@@ -27,3 +27,9 @@ apps:
     install: true
   sync-waves:
     install: true
+  jenkins:
+    install: true
+    helm:
+      repoURL: s3://hin22001/helm/jenkins
+      version: 0.1.0
+      

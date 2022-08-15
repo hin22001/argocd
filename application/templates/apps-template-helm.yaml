@@ -17,10 +17,10 @@ spec:
   project: default
   source:
     repoURL: {{ $spec.source.repoURL }}
-    targetRevision: 1.0.0
+    targetRevision: {{ $app.helm.version }}
     helm:
-      valuesFile:
-      values: {{ $app.helm.values }}
+      values: |
+{{ toYaml $app.helm.values | indent 8 }}
   syncPolicy: {{ toYaml $global.syncPolicy | nindent 4 }}
   {{ end }}
 ---
