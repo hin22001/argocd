@@ -1,0 +1,29 @@
+global:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+    - CreateNamespace=true
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
+
+apps:
+  helm-guestbook: 
+    install: true
+    helm:
+      test: hi
+  helm-hooks:
+    install: true
+    helm:
+      test: hi
+  kustomize-guestbook:
+    install: true
+  sync-waves:
+    install: true

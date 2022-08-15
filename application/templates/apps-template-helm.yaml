@@ -1,0 +1,27 @@
+# All argo application will be defined by this template
+{{- $spec := .Values.spec }}
+{{- $global := .Values.global }}
+{{- range $name, $app := .Values.apps }}
+  {{- if and $app.install $app.helm }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $name }}
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ default $name $app.namespace }}
+    server: {{ $spec.destination.server }}
+  project: default
+  source:
+    repoURL: {{ $spec.source.repoURL }}
+    targetRevision: 1.0.0
+    helm:
+      valuesFile:
+      values: {{ $app.helm.values }}
+  syncPolicy: {{ toYaml $global.syncPolicy | nindent 4 }}
+  {{ end }}
+---
+{{- end -}}
