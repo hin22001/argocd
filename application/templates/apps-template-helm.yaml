@@ -16,7 +16,7 @@ spec:
     server: {{ $spec.destination.server }}
   project: default
   source:
-    repoURL: {{ $spec.source.repoURL }}
+    repoURL: {{ $spec.source.helmRepoURL }}
     targetRevision: {{ $app.helm.version }}
     chart: {{ $name }}
     helm:

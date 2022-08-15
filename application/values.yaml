@@ -13,16 +13,13 @@ spec:
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
+    helmRepoURL: s3://hin22001/helm/jenkins
 
 apps:
   helm-guestbook: 
     install: true
-    helm:
-      test: hi
   helm-hooks:
     install: true
-    helm:
-      test: hi
   kustomize-guestbook:
     install: true
   sync-waves:
@@ -30,6 +27,5 @@ apps:
   jenkins:
     install: true
     helm:
-      repoURL: s3://hin22001/helm/jenkins
       version: 0.1.0
       
