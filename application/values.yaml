@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
-    helmRepoURL: https://hin22001.s3.amazonaws.com/helm/jenkins
+    helmRepoURL: https://hin22001.github.io/helm/
 
 apps:
   helm-guestbook: 
