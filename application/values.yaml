@@ -19,11 +19,7 @@ apps:
   jenkins:
     install: true
     helm:
-      version: 0.1.3
-      values:
-        jenkins:
-          controller:
-            jenkinsUrl: http://kubernetes.docker.internal/jenkins
+      version: 0.1.8
   ingress-controller:
     install: true
     helm:
