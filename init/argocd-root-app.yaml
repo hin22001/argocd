@@ -13,7 +13,7 @@ spec:
   # Reference to target k8s server and namespace
   destination:
     # describe the target namespace of the application
-    namespace: app
+    namespace: argocd
     # describe the URL of target cluster
     server: https://kubernetes.default.svc
 
