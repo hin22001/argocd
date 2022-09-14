@@ -19,7 +19,7 @@ apps:
   jenkins:
     install: true
     helm:
-      version: 0.1.12
+      version: 0.1.11
   ingress-controller:
     install: true
     helm:
