@@ -17,7 +17,7 @@ spec:
 
 apps:
   jenkins:
-    install: true
+    install: false
     helm:
       version: 0.1.13
   ingress-controller:
