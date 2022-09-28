@@ -24,4 +24,8 @@ apps:
     install: true
     helm:
       version: 0.1.0
+  grafana:
+    install: true
+    helm:
+      version: 0.1.0
       
